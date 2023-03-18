@@ -1,3 +1,25 @@
+@keyframes floating {
+  0% {
+    transform: translateX(0rem);
+  }
+  50% {
+    transform: translateX(-5rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+@keyframes shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
 /*reset*/
 * {
   margin: 0;
@@ -50,14 +72,18 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
 }
-
+section {
+  overflow-x: hidden;
+}
 /*fonts and buttons*/
 h1 {
   font-family: 'bloomer';
   font-size: 5rem;
-  line-height: 1.3;
+  line-height: 1;
   color: var(--white);
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: var(--regular);
 }
 
 h2 {
@@ -66,9 +92,12 @@ h2 {
   line-height: 1.3;
   color: var(--white);
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: var(--regular);
 }
 
-p {
+p,
+li {
   font-family: 'nunito', sans-serif;
   font-weight: var(--regular);
   font-size: 1.7rem;
@@ -113,12 +142,22 @@ a:hover {
   padding: 1rem 2rem;
   background: var(--pink);
 
+  border: none;
   border-radius: 5rem;
 
   font-weight: var(--bold);
   color: var(--white);
 }
+.btn-purple {
+  padding: 1rem 2rem;
+  background: var(--purple);
 
+  border: none;
+  border-radius: 5rem;
+
+  font-weight: var(--bold);
+  color: var(--white);
+}
 .btn-border-white {
   padding: 0.8rem 2rem;
   background: transparent;
@@ -219,6 +258,11 @@ header.menu .btn-mobile-menu {
 /*home*/
 section.home {
   position: relative;
+  background: url(../img/waves-top-bottom.png);
+  background-size: 100% 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  padding-bottom: 12rem;
 }
 
 section.home .row {
@@ -229,9 +273,29 @@ section.home .row {
   gap: 2rem;
   align-items: center;
 }
-
-section.home img {
-  width: 100%;
+section.home .cloud {
+  position: absolute;
+  width: 25rem;
+  top: 12rem;
+  right: -30rem;
+  animation: floating 7s infinite;
+}
+section.home .cloud2 {
+  position: absolute;
+  width: 10rem;
+  bottom: -3rem;
+  right: 50%;
+  animation: floating 8s ease-in-out infinite;
+}
+section.home .airplane {
+  position: absolute;
+  width: 15rem;
+  top: 0rem;
+  left: -12rem;
+  animation: shaking 3s ease-in-out infinite;
+}
+section.home .home-illustration {
+  width: 57rem;
 }
 
 .box-buttons {
@@ -242,10 +306,47 @@ section.home img {
 /*end home*/
 /*about us*/
 section.about-us {
+  position: relative;
   padding: 2rem 0;
   background: var(--white);
+  overflow-x: unset;
 }
-
+section.about-us::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -9rem;
+  height: 10rem;
+  width: 100%;
+  background: url(../img/wave-white-top.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+section.about-us::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -9rem;
+  height: 10rem;
+  width: 100%;
+  background: url(../img/wave-white-bottom.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+section.about-us .cloud {
+  position: absolute;
+  width: 28rem;
+  top: -2rem;
+  left: -20rem;
+  animation: floating 12s ease-in infinite;
+}
+section.about-us .cloud2 {
+  position: absolute;
+  width: 31rem;
+  bottom: -13rem;
+  right: -15rem;
+  animation: floating 12s ease-in infinite;
+}
 section.about-us h2 {
   color: var(--purple);
   margin: 0 auto;
@@ -257,6 +358,9 @@ section.about-us p {
 }
 
 section.about-us .row-about-us {
+  position: relative;
+  margin-top: -12rem;
+  margin-bottom: 7rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -274,14 +378,35 @@ section.about-us .row-about-us .box-buttons {
 
 section.about-us .row-our-app {
   display: block;
+  position: relative;
+  z-index: 3;
   width: 100%;
+  margin-bottom: -25rem;
 }
 
+section.about-us .row-our-app .caroucel-our-app {
+  margin-top: 3rem;
+}
 /*end about us */
+/*comments*/
 section.comments {
-  padding: 2rem 0;
-}
+  background: url('../img/waves-top.png');
+  background-size: 100% auto;
+  background-position: top;
+  background-repeat: no-repeat;
 
+  padding: 28rem 0 2rem 0;
+}
+section.comments .row {
+  position: relative;
+}
+section.comments .cloud {
+  position: absolute;
+  width: 28rem;
+  top: -2rem;
+  left: -8rem;
+  animation: floating 12s ease-in infinite;
+}
 section.comments h2 {
   position: relative;
   width: 45rem;
@@ -380,10 +505,36 @@ section.comments .btn-apple-store img {
 /*end comments*/
 /*faq*/
 section.faq {
+  background-image: url(../img/waves-right.png), url(../img/waves-left.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%, auto 100%;
+  background-position: right, left;
   padding: 2rem 0;
 }
 
+section.faq .cloud {
+  position: absolute;
+  width: 21rem;
+  top: 21rem;
+  left: -19rem;
+  animation: floating 12s infinite;
+}
+section.faq .cloud2 {
+  position: absolute;
+  width: 20rem;
+  top: -3rem;
+  right: -13rem;
+  animation: floating 8s ease-in-out infinite;
+}
+section.faq .airplane {
+  position: absolute;
+  width: 15rem;
+  bottom: 0rem;
+  right: 10rem;
+  animation: shaking 3s ease-in-out infinite;
+}
 section.faq .row {
+  position: relative;
   display: flex;
 }
 
@@ -401,11 +552,14 @@ section.faq .accordion .question {
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
 
-  border-radius: 5rem;
+  border-radius: 2rem;
   border: 0.2rem solid var(--white);
 
   font-size: 1.3rem;
   color: var(--gray);
+}
+section.faq .accordion .question p {
+  margin-bottom: 0;
 }
 
 section.faq .accordion .question img {
@@ -421,7 +575,7 @@ section.faq .accordion .answer {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 1rem;
-  background: linear-gradient(180deg, var(--blue), var(--blue-dark));
+  background: var(--pink);
   margin-bottom: 1rem;
 
   border-radius: 1.5rem;
@@ -436,8 +590,8 @@ section.faq .accordion .answer .content {
 }
 
 section.faq .accordion .answer img {
-  width: 4rem;
-  padding: 0.8rem 1rem;
+  height: 3.3rem;
+  padding: 0.8rem 1.5rem 0 0;
 }
 
 section.faq .accordion .answer p,
@@ -458,43 +612,60 @@ section.faq .accordion .answer.open {
 
 /*open close*/
 section.faq img.detail {
-  margin-top: 20rem;
+  margin-top: 3rem;
   margin-left: -2rem;
-  width: 30rem;
+  width: 40rem;
 }
 
 /*end faq*/
 /*get in touch */
 section.get-in-touch {
-  margin-bottom: 10rem;
+  background-image: url(../img/waves-bottom.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: bottom;
+  padding-bottom: 25rem;
 }
-
+section.get-in-touch .cloud {
+  position: absolute;
+  width: 23rem;
+  top: 10rem;
+  left: -24rem;
+  animation: floating 8s ease-in-out infinite;
+}
 section.get-in-touch .row {
+  position: relative;
   margin: 0 auto;
   width: 60%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background: linear-gradient(90deg, var(--green), var(--green-light));
+  gap: 1rem;
+  background: var(--white);
   padding: 2rem;
 
   border-radius: 2rem;
 }
 
-section.get-in-touch h1 {
-  color: var(--white);
-  line-height: 1.4;
-  font-size: 3rem;
+section.get-in-touch .col-text {
+  display: flex;
+  flex-flow: column;
+}
+section.get-in-touch h2 {
+  color: var(--purple);
+  text-align: center;
+  line-height: 1.1;
 }
 
 section.get-in-touch p {
-  color: var(--white);
+  color: var(--purple);
+  text-align: center;
   font-size: 1.4rem;
   margin-bottom: 2rem;
 }
 
-section.get-in-touch img {
-  width: 20rem;
-  margin-bottom: -6.5rem;
+section.get-in-touch .detail-form {
+  height: 27rem;
+  margin: 0 auto -14rem auto;
 }
 
 section.get-in-touch form {
@@ -508,9 +679,9 @@ section.get-in-touch form input {
   padding: 0.7rem 1.5rem;
 
   border-radius: 5rem;
-  border: 2px solid var(--white);
+  border: 2px solid var(--purple);
 
-  color: var(--white);
+  color: var(--purple);
   font-size: 1.3rem;
 }
 
@@ -520,9 +691,9 @@ section.get-in-touch form textarea {
   height: 8rem;
 
   border-radius: 1.5rem;
-  border: 2px solid var(--white);
+  border: 2px solid var(--purple);
 
-  color: var(--white);
+  color: var(--purple);
   font-size: 1.3rem;
 
   resize: none;
@@ -530,7 +701,7 @@ section.get-in-touch form textarea {
 
 section.get-in-touch form input::placeholder,
 section.get-in-touch form textarea::placeholder {
-  color: var(--white);
+  color: var(--purple);
 }
 
 section.get-in-touch form button {
@@ -541,6 +712,7 @@ section.get-in-touch form button {
 }
 
 /*end get in touch*/
+/*thank you*/
 section.thanks {
   display: flex;
   flex-direction: column;
@@ -570,11 +742,11 @@ section.thanks .return-box a {
   font-size: 1.5rem;
   color: var(--blue);
 }
-
+/*end thank you*/
 /*footer*/
 footer {
   padding: 2rem 0;
-  background: var(--blue-light);
+  background: var(--white);
 }
 
 footer .row {
@@ -585,12 +757,11 @@ footer .row {
 }
 
 footer .logo {
-  height: 4rem;
+  height: 9rem;
 }
-
-footer ul.menu-footer li a,
-footer p {
-  color: var(--blue-dark);
+footer .footer-title {
+  font-family: 'Poppins', sans-serif;
+  color: var(--purple);
   font-size: 1.5rem;
 }
 
@@ -598,8 +769,8 @@ footer .get-in-touch-list li {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--blue-dark);
-  font-size: 1.1rem;
+  font-size: 1.4rem;
+  color: var(--purple);
 }
 
 footer .get-in-touch-list li img {
@@ -695,8 +866,8 @@ footer .get-in-touch-list li {
     overflow: hidden;
     z-index: 10;
     background: var(--dark-purple);
-    border-bottom-left-radius: .5rem;
-    border-top-left-radius: .5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
     /* height: calc(100vh - 9rem); */
     height: auto;
     transform: scaleX(0);
