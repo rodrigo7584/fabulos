@@ -17,12 +17,14 @@ ul {
 button:hover {
   cursor: pointer;
 }
+
 /*end reset*/
 /*custom fonts*/
 @font-face {
   font-family: 'bloomer';
   src: url('../font/bloomer.otf');
 }
+
 /*end custom fonts*/
 :root {
   font-family: 'Nunito', sans-serif;
@@ -30,21 +32,25 @@ button:hover {
   scroll-behavior: smooth;
   font-size: 62.5%;
   --purple: #6959df;
+  --dark-purple: rgb(56, 48, 119);
   --pink: #fe8ea1;
   --white: #ffffff;
   --black: #000000;
   --bold: 700;
   --regular: 400;
 }
+
 body {
   background-color: var(--purple);
 }
+
 .container {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 /*fonts and buttons*/
 h1 {
   font-family: 'bloomer';
@@ -53,6 +59,7 @@ h1 {
   color: var(--white);
   margin-bottom: 1rem;
 }
+
 h2 {
   font-family: 'bloomer';
   font-size: 4.5rem;
@@ -60,16 +67,19 @@ h2 {
   color: var(--white);
   margin-bottom: 1rem;
 }
+
 p {
   font-family: 'nunito', sans-serif;
   font-weight: var(--regular);
   font-size: 1.7rem;
   margin-bottom: 1rem;
 }
+
 .title-crown {
   position: relative;
   width: fit-content;
 }
+
 .title-crown::before {
   content: '';
   display: block;
@@ -79,6 +89,7 @@ p {
   background-repeat: no-repeat;
   background-size: 100% auto;
 }
+
 h2.title-crown::before {
   margin: 0 auto;
 }
@@ -86,15 +97,18 @@ h2.title-crown::before {
 strong {
   font-weight: var(--bold);
 }
+
 .btn,
 a {
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
 }
+
 .btn:hover,
 a:hover {
   transform: scale(0.97);
 }
+
 .btn-pink {
   padding: 1rem 2rem;
   background: var(--pink);
@@ -115,10 +129,12 @@ a:hover {
   font-weight: var(--bold);
   color: var(--white);
 }
+
 .btn-play-store img,
 .btn-apple-store img {
   height: 3.5rem;
 }
+
 /*end fonts and buttons*/
 /*caroucel*/
 .caroucel {
@@ -126,31 +142,39 @@ a:hover {
   grid-template-columns: 60px auto 60px;
   justify-content: center;
 }
+
 .caroucel .controls {
   display: grid;
   justify-content: center;
   align-items: center;
   transition: 0.2s all ease;
 }
+
 .caroucel .controls img {
   width: 30px;
 }
+
 .caroucel .controls img:hover {
   cursor: pointer;
 }
+
 .caroucel .controls.btn-next:hover {
   transform: translate(5px);
 }
+
 .caroucel .controls.btn-back:hover {
   transform: translate(-5px);
 }
+
 .caroucel .controls.btn-next.disabled,
 .caroucel .controls.btn-back.disabled {
   opacity: 0.4;
 }
+
 .caroucel .caroucel-content {
   width: 100%;
 }
+
 /*end caroucel*/
 /*header*/
 header.menu {
@@ -181,10 +205,12 @@ header.menu nav li a {
   color: var(--gray);
   padding: 0.5rem;
 }
+
 header.menu nav li a.btn-pink {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
 header.menu .btn-mobile-menu {
   display: none;
 }
@@ -194,6 +220,7 @@ header.menu .btn-mobile-menu {
 section.home {
   position: relative;
 }
+
 section.home .row {
   padding: 2rem 0;
   position: relative;
@@ -202,51 +229,82 @@ section.home .row {
   gap: 2rem;
   align-items: center;
 }
+
 section.home img {
   width: 100%;
 }
+
 .box-buttons {
   display: flex;
   gap: 1rem;
 }
+
 /*end home*/
 /*about us*/
 section.about-us {
   padding: 2rem 0;
   background: var(--white);
 }
+
 section.about-us h2 {
   color: var(--purple);
   margin: 0 auto;
 }
+
 section.about-us p {
   text-align: center;
   color: var(--purple);
 }
+
 section.about-us .row-about-us {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 3rem;
 }
+
 section.about-us .row-about-us img {
   max-width: 100%;
 }
+
 section.about-us .row-about-us .box-buttons {
   display: flex;
   justify-content: center;
 }
+
 section.about-us .row-our-app {
   display: block;
   width: 100%;
 }
+
 /*end about us */
 section.comments {
   padding: 2rem 0;
 }
+
 section.comments h2 {
+  position: relative;
+  width: 45rem;
+  text-align: center;
   margin: 0 auto 2rem auto;
 }
+
+section.comments h2::after {
+  content: '';
+  width: 8rem;
+  height: 9rem;
+  position: absolute;
+  right: -11rem;
+  bottom: 2rem;
+  background-image: url('../img/illustration-medal.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+section.comments .caroucel-comments {
+  margin-bottom: 6rem;
+}
+
 section.comments .comment-box {
   display: grid;
   background-color: var(--white);
@@ -257,32 +315,69 @@ section.comments .comment-box {
 
   filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.3));
 }
+
 section.comments .comment-box .icon {
   height: 7rem;
   margin: -5rem auto 1rem auto;
 
   filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.2));
 }
+
 section.comments .comment-box p {
   line-height: 1.1;
   font-size: 1.4rem;
   color: var(--black);
 }
+
 section.comments .comment-box .name-evaluation {
   display: flex;
   gap: 1rem;
 }
+
 section.comments .comment-box .name-evaluation p {
   font-weight: var(--bold);
   font-size: 1.5rem;
 }
+
 section.comments .comment-box .name-evaluation .evaluation {
   display: flex;
   gap: 0.3rem;
 }
+
 section.comments .comment-box .name-evaluation .evaluation img {
   height: 1.7rem;
 }
+
+section.comments .text-after-caroucel-comments {
+  width: 40rem;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+section.comments .text-after-caroucel-comments::before {
+  content: '';
+  width: 8rem;
+  height: 9rem;
+  position: absolute;
+  left: -11rem;
+  top: -2rem;
+  background-image: url('../img/illustration-medal-2.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+section.comments .box-buttons {
+  justify-content: center;
+}
+
+section.comments .btn-play-store img,
+section.comments .btn-apple-store img {
+  height: 4.5rem;
+}
+
+/*end comments*/
 /*faq*/
 section.faq {
   padding: 2rem 0;
@@ -307,14 +402,15 @@ section.faq .accordion .question {
   margin-bottom: 1rem;
 
   border-radius: 5rem;
-  border: 0.2rem solid var(--blue);
+  border: 0.2rem solid var(--white);
 
   font-size: 1.3rem;
   color: var(--gray);
 }
 
 section.faq .accordion .question img {
-  width: 100%;
+  max-width: 100%;
+  height: 2.5rem;
 }
 
 section.faq .accordion .question:hover {
@@ -417,6 +513,7 @@ section.get-in-touch form input {
   color: var(--white);
   font-size: 1.3rem;
 }
+
 section.get-in-touch form textarea {
   background: transparent;
   padding: 0.7rem 1.5rem;
@@ -558,7 +655,9 @@ footer .get-in-touch-list li {
   /*header*/
   header.menu .btn-mobile-menu {
     background: none;
-    border: none;
+    border: 2px solid var(--pink);
+    border-radius: 0.5rem;
+    padding: 1rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
@@ -568,7 +667,7 @@ footer .get-in-touch-list li {
     width: 3.9rem;
     height: 0.4rem;
     border-radius: 20px;
-    background: var(--blue);
+    background: var(--pink);
     transition: 0.6s;
   }
 
@@ -595,7 +694,9 @@ footer .get-in-touch-list li {
     visibility: hidden;
     overflow: hidden;
     z-index: 10;
-    background: var(--blue-light);
+    background: var(--dark-purple);
+    border-bottom-left-radius: .5rem;
+    border-top-left-radius: .5rem;
     /* height: calc(100vh - 9rem); */
     height: auto;
     transform: scaleX(0);
