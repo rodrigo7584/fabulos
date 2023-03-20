@@ -41,6 +41,12 @@ new Glider(caroucelOurApp, {
   },
   responsive: [
     {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
       breakpoint: 768,
       settings: {
         slidesToShow: 3
@@ -76,9 +82,15 @@ new Glider(caroucelComments, {
       }
     },
     {
-      breakpoint: 992,
+      breakpoint: 768,
       settings: {
-        slidesToShow: 3
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 4
       }
     }
   ]

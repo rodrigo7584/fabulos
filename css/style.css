@@ -685,6 +685,7 @@ section.get-in-touch .row {
 section.get-in-touch .col-text {
   display: flex;
   flex-flow: column;
+  grid-column: 1/2;
 }
 
 section.get-in-touch h2 {
@@ -703,8 +704,12 @@ section.get-in-touch p {
 section.get-in-touch .detail-form {
   height: 27rem;
   margin: 0 auto -14rem auto;
+  grid-column: 1/2;
 }
-
+section.get-in-touch .col-form {
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
 section.get-in-touch form {
   display: flex;
   flex-direction: column;
@@ -876,6 +881,10 @@ footer .get-in-touch-list li {
 
   /*end home*/
   /*faq*/
+
+  section.faq .cloud2 {
+    right: -16rem;
+  }
   section.faq .airplane {
     right: 3rem;
   }
@@ -884,13 +893,8 @@ footer .get-in-touch-list li {
     width: 23rem;
   }
 
-  section.faq .airplane {
-    left: -20rem;
-  }
-
   /*end faq*/
   /*get in touch*/
-
 
   section.get-in-touch .row {
     margin: 0 auto;
@@ -994,10 +998,16 @@ footer .get-in-touch-list li {
     margin: 0 auto;
   }
 
-
-
   /* end about us */
   /*comments*/
+  section.comments h2::after {
+    width: 6rem;
+    right: -6rem;
+  }
+  section.comments .text-after-caroucel-comments::before {
+    width: 6rem;
+    left: -7rem;
+  }
   section.comments .cloud {
     top: -14rem;
   }
@@ -1008,47 +1018,116 @@ footer .get-in-touch-list li {
     width: 18rem;
     margin-top: 12rem;
   }
-
+  /*get in touch*/
+  section.get-in-touch {
+    padding-bottom: 15rem;
+  }
   section.get-in-touch .row {
     margin: 0 auto;
     width: 100%;
   }
+  /*end get in touch*/
 }
 
 @media (max-width: 576px) {
+  @keyframes floating {
+    0% {
+      transform: translateX(0rem);
+    }
+
+    50% {
+      transform: translateX(-3rem);
+    }
+
+    100% {
+      transform: translateX(0rem);
+    }
+  }
   .container {
     max-width: 400px;
     padding: 0 1rem;
   }
-
-  section.home .row {
-    display: grid;
-    grid-template-columns: auto 1fr;
+  /*home*/
+  section.home .cloud {
+    right: -12rem;
+    width: 18rem;
+    top: 6rem;
   }
-
-
-  section.home img {
-    width: 15rem;
+  section.home .airplane {
+    width: 10rem;
+    top: 30rem;
+    left: -3rem;
   }
-
-  section.home .btn-blue {
-    font-size: 1.2rem;
+  section.home .cloud2 {
+    right: 13%;
   }
-
+  section.home .home-illustration {
+    width: 100%;
+  }
+  section.home h1 {
+    width: 85%;
+  }
+  /*end home*/
+  /*comments*/
+  section.comments h2 {
+    width: 80%;
+    font-size: 4rem;
+    text-align: left;
+    line-height: 1;
+    margin: 0 0 2rem 0;
+  }
+  section.comments h2::after {
+    right: -7rem;
+  }
+  section.comments .text-after-caroucel-comments {
+    width: 80%;
+    text-align: right;
+    margin: 0 0 2rem auto;
+  }
+  section.comments .text-after-caroucel-comments::before {
+    left: -6rem;
+    top: 4rem;
+  }
+  /*end comments*/
+  /*faq*/
+  section.faq {
+    padding-bottom: 10rem;
+  }
+  section.faq .airplane {
+    bottom: -9rem;
+    width: 13rem;
+  }
+  section.faq .cloud2 {
+    right: -9rem;
+  }
   section.faq img.detail {
-    width: 9rem;
+    width: 6rem;
     margin-top: 25rem;
-    display: none;
+    /* display: none; */
   }
-
+  /*end faq*/
+  /*get in touch */
+  section.get-in-touch {
+    padding-bottom: 10rem;
+  }
+  section.get-in-touch .detail-form {
+    order: 3;
+  }
+  section.get-in-touch .detail-form {
+    height: 20rem;
+    width: auto;
+    margin: 0 auto -9rem auto;
+  }
+  section.get-in-touch .col-form {
+    grid-column: 1/2;
+    grid-row: auto;
+    order: 2;
+  }
+  /*end get in touch*/
   section.get-in-touch .row {
     grid-template-columns: 1fr;
   }
-
-  section.get-in-touch img {
-    width: 13rem;
-  }
-
+  /*footer*/
   footer .row {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1058,15 +1137,8 @@ footer .get-in-touch-list li {
     display: flex;
     justify-content: center;
   }
+  /*end footer*/
 }
 
 @media (max-width: 400px) {
-  section.home .btn-blue {
-    font-size: 1rem;
-  }
-
-  section.faq img.detail {
-    width: 9rem;
-    margin-top: 33rem;
-  }
 }
