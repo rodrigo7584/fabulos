@@ -2,24 +2,30 @@
   0% {
     transform: translateX(0rem);
   }
+
   50% {
     transform: translateX(-5rem);
   }
+
   100% {
     transform: translateX(0rem);
   }
 }
+
 @keyframes shaking {
   0% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(12deg);
   }
+
   100% {
     transform: rotate(0);
   }
 }
+
 /*reset*/
 * {
   margin: 0;
@@ -72,9 +78,11 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 section {
   overflow-x: hidden;
 }
+
 /*fonts and buttons*/
 h1 {
   font-family: 'bloomer';
@@ -148,6 +156,7 @@ a:hover {
   font-weight: var(--bold);
   color: var(--white);
 }
+
 .btn-purple {
   padding: 1rem 2rem;
   background: var(--purple);
@@ -158,6 +167,7 @@ a:hover {
   font-weight: var(--bold);
   color: var(--white);
 }
+
 .btn-border-white {
   padding: 0.8rem 2rem;
   background: transparent;
@@ -273,6 +283,7 @@ section.home .row {
   gap: 2rem;
   align-items: center;
 }
+
 section.home .cloud {
   position: absolute;
   width: 25rem;
@@ -280,6 +291,7 @@ section.home .cloud {
   right: -30rem;
   animation: floating 7s infinite;
 }
+
 section.home .cloud2 {
   position: absolute;
   width: 10rem;
@@ -287,6 +299,7 @@ section.home .cloud2 {
   right: 50%;
   animation: floating 8s ease-in-out infinite;
 }
+
 section.home .airplane {
   position: absolute;
   width: 15rem;
@@ -294,6 +307,7 @@ section.home .airplane {
   left: -12rem;
   animation: shaking 3s ease-in-out infinite;
 }
+
 section.home .home-illustration {
   width: 57rem;
 }
@@ -311,6 +325,7 @@ section.about-us {
   background: var(--white);
   overflow-x: unset;
 }
+
 section.about-us::before {
   content: '';
   display: block;
@@ -322,6 +337,7 @@ section.about-us::before {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
+
 section.about-us::after {
   content: '';
   display: block;
@@ -333,6 +349,7 @@ section.about-us::after {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
+
 section.about-us .cloud {
   position: absolute;
   width: 28rem;
@@ -340,6 +357,7 @@ section.about-us .cloud {
   left: -20rem;
   animation: floating 12s ease-in infinite;
 }
+
 section.about-us .cloud2 {
   position: absolute;
   width: 31rem;
@@ -347,9 +365,11 @@ section.about-us .cloud2 {
   right: -15rem;
   animation: floating 12s ease-in infinite;
 }
+
 section.about-us h2 {
   color: var(--purple);
   margin: 0 auto;
+  text-align: center;
 }
 
 section.about-us p {
@@ -387,6 +407,13 @@ section.about-us .row-our-app {
 section.about-us .row-our-app .caroucel-our-app {
   margin-top: 3rem;
 }
+
+section.about-us .row-our-app .caroucel-our-app .slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*end about us */
 /*comments*/
 section.comments {
@@ -397,9 +424,11 @@ section.comments {
 
   padding: 28rem 0 2rem 0;
 }
+
 section.comments .row {
   position: relative;
 }
+
 section.comments .cloud {
   position: absolute;
   width: 28rem;
@@ -407,6 +436,7 @@ section.comments .cloud {
   left: -8rem;
   animation: floating 12s ease-in infinite;
 }
+
 section.comments h2 {
   position: relative;
   width: 45rem;
@@ -519,6 +549,7 @@ section.faq .cloud {
   left: -19rem;
   animation: floating 12s infinite;
 }
+
 section.faq .cloud2 {
   position: absolute;
   width: 20rem;
@@ -526,6 +557,7 @@ section.faq .cloud2 {
   right: -13rem;
   animation: floating 8s ease-in-out infinite;
 }
+
 section.faq .airplane {
   position: absolute;
   width: 15rem;
@@ -533,6 +565,7 @@ section.faq .airplane {
   right: 10rem;
   animation: shaking 3s ease-in-out infinite;
 }
+
 section.faq .row {
   position: relative;
   display: flex;
@@ -558,6 +591,7 @@ section.faq .accordion .question {
   font-size: 1.3rem;
   color: var(--gray);
 }
+
 section.faq .accordion .question p {
   margin-bottom: 0;
 }
@@ -626,6 +660,7 @@ section.get-in-touch {
   background-position: bottom;
   padding-bottom: 25rem;
 }
+
 section.get-in-touch .cloud {
   position: absolute;
   width: 23rem;
@@ -633,6 +668,7 @@ section.get-in-touch .cloud {
   left: -24rem;
   animation: floating 8s ease-in-out infinite;
 }
+
 section.get-in-touch .row {
   position: relative;
   margin: 0 auto;
@@ -650,6 +686,7 @@ section.get-in-touch .col-text {
   display: flex;
   flex-flow: column;
 }
+
 section.get-in-touch h2 {
   color: var(--purple);
   text-align: center;
@@ -742,6 +779,7 @@ section.thanks .return-box a {
   font-size: 1.5rem;
   color: var(--blue);
 }
+
 /*end thank you*/
 /*footer*/
 footer {
@@ -759,6 +797,7 @@ footer .row {
 footer .logo {
   height: 9rem;
 }
+
 footer .footer-title {
   font-family: 'Poppins', sans-serif;
   color: var(--purple);
@@ -793,6 +832,22 @@ footer .get-in-touch-list li {
     max-width: 992px;
   }
 
+  /*home*/
+  section.home .cloud {
+    right: -21rem;
+  }
+
+  section.home .airplane {
+    left: -8rem;
+  }
+
+  /*end home*/
+  /*about-us*/
+  section.about-us .cloud {
+    left: -12rem;
+  }
+
+  /*end about-us*/
   section.get-in-touch .row {
     margin: 0 auto;
     width: 70%;
@@ -804,23 +859,59 @@ footer .get-in-touch-list li {
     max-width: 768px;
   }
 
+  /*home*/
+  section.home .airplane {
+    left: -6rem;
+    top: 24rem;
+  }
+
+  section.home .row {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
   section.home h1 {
     font-size: 4rem;
+  }
+
+  /*end home*/
+  /*faq*/
+  section.faq .airplane {
+    right: 3rem;
   }
 
   section.faq img.detail {
     width: 23rem;
   }
 
+  section.faq .airplane {
+    left: -20rem;
+  }
+
+  /*end faq*/
+  /*get in touch*/
+
+
   section.get-in-touch .row {
     margin: 0 auto;
     width: 80%;
   }
+
+  section.get-in-touch .cloud {
+    left: -19rem;
+  }
+
+  /*get in touch*/
 }
 
 @media (max-width: 768px) {
   .container {
     max-width: 576px;
+  }
+
+  .btn-play-store img,
+  .btn-apple-store img {
+    height: 4.5rem;
   }
 
   /*header*/
@@ -885,22 +976,33 @@ footer .get-in-touch-list li {
   }
 
   /*end header*/
-  section.home h1 {
-    font-size: 3rem;
+  /*home*/
+  section.home .airplane {
+    top: 27rem;
   }
 
-  section.about-us .content-row {
+  /*end home*/
+  /*about-us*/
+  section.about-us .row-about-us {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 
-  section.about-us .col-img {
-    display: flex;
-    justify-content: center;
-  }
-
-  section.about-us .col-img img {
+  section.about-us .row-about-us .about-us-illustration {
     max-width: 60%;
+    display: block;
+    margin: 0 auto;
   }
+
+
+
+  /* end about us */
+  /*comments*/
+  section.comments .cloud {
+    top: -14rem;
+  }
+
+  /*end comments*/
 
   section.faq img.detail {
     width: 18rem;
@@ -924,9 +1026,6 @@ footer .get-in-touch-list li {
     grid-template-columns: auto 1fr;
   }
 
-  section.home h1 {
-    font-size: 2rem;
-  }
 
   section.home img {
     width: 15rem;
